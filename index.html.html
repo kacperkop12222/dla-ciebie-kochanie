@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Dla Ciebie, kochanie</title>
+<style>
+html, body { margin:0; padding:0; scroll-behavior:smooth; font-family:'Arial', sans-serif; background:#fff; }
+section { min-height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; position:relative; }
+h1 { font-size:4rem; color:white; text-shadow:2px 2px 8px rgba(0,0,0,0.3); margin-bottom:40px; }
+button { margin-top:30px; padding:12px 28px; font-size:1.2rem; background:#8e44ad; border:none; border-radius:30px; color:white; cursor:pointer; transition:background 0.3s; }
+button:hover { background:#732d91; }
+
+/* Ekran 1 */
+.welcome { background: linear-gradient(135deg, #ff6ec7, #8e44ad); overflow:hidden; flex-direction:column; display:flex; }
+.heart, .photo { position:absolute; bottom:-100px; animation: floatUp 12s linear infinite; opacity:0.8; }
+.heart { font-size:2.5rem; }
+.photo { width:120px; height:auto; border-radius:20px; box-shadow:0 0 15px rgba(0,0,0,0.4); }
+@keyframes floatUp { 0% { transform:translateY(0) scale(1); opacity:0.9; } 100% { transform:translateY(-120vh) scale(1.3); opacity:0; } }
+
+/* Ekran 2 */
+.screen2 { background: linear-gradient(135deg, #ffe4f2, #d9a7ff); color:#333; padding:60px; display:flex; justify-content:center; align-items:center; }
+.screen2 .content { max-width:800px; background: rgba(255,255,255,0.9); padding:40px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.2); text-align:center; }
+
+/* Ekran 3 */
+.screen3 { background: linear-gradient(135deg, #ffe4f2, #e0b3ff); color:#333; padding:60px; display:flex; justify-content:center; align-items:center; }
+.screen3 .container { position:relative; max-width:900px; background: rgba(255,255,255,0.9); padding:40px 50px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.2); text-align:center; }
+.photoFloat { position:absolute; width:160px; height:auto; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.3); animation: floatPhoto 6s ease-in-out infinite alternate; }
+.photo1 { left:-180px; top:30px; animation-delay:0s; }
+.photo2 { right:-180px; top:150px; animation-delay:1.5s; }
+.photo3 { left:50%; transform:translateX(-50%); top:-200px; animation-delay:3s; }
+@keyframes floatPhoto { 0% { transform:translateY(0) rotate(-3deg); } 100% { transform:translateY(15px) rotate(3deg); } }
+p { font-size:1.4rem; line-height:1.9; color:#333; }
+.highlight { color:#8e44ad; font-weight:bold; }
+
+/* Ekran 4 - ostatni tekst w kartce z 5 zdjęciami wokół */
+.screen4 { background: linear-gradient(135deg, #ffe0f7, #d780ff); padding:60px; display:flex; justify-content:center; align-items:center; position:relative; }
+.scrollCard { max-height:80vh; overflow-y:auto; padding:40px; border-radius:20px; background:rgba(255,255,255,0.9); box-shadow:0 10px 30px rgba(0,0,0,0.2); text-align:center; position:relative; z-index:2; }
+.lastPhoto { position:absolute; width:140px; height:auto; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.3); animation: floatPhoto 7s ease-in-out infinite alternate; }
+.last1 { top:-100px; left:10%; }
+.last2 { top:-80px; right:10%; }
+.last3 { bottom:-80px; left:20%; }
+.last4 { bottom:-100px; right:20%; }
+.last5 { top:50%; left:50%; transform:translate(-50%, -50%); }
+
+/* Ekran 5 - zakończenie */
+.screen5 { background: linear-gradient(135deg, #ffb3ec, #b380ff); flex-direction:column; overflow:hidden; }
+.bigLove { font-size:5rem; color:white; text-shadow:3px 3px 8px rgba(0,0,0,0.4); margin:0; }
+.mwah { font-size:2.5rem; color:#fff; margin:10px 0 30px 0; }
+.kiss, .loveHeart { position:absolute; bottom:-100px; font-size:2rem; animation: floatKiss 10s linear infinite; opacity:0.9; }
+@keyframes floatKiss { 0% { transform:translateY(0) scale(1); opacity:0.9; } 100% { transform:translateY(-120vh) scale(1.3); opacity:0; } }
+
+@media (max-width:1000px) { .photo, .photoFloat, .lastPhoto { display:none; } }
+</style>
+</head>
+<body>
+
+<!-- Ekran 1 -->
+<section class="welcome">
+<h1>Kocham Cię ❤️❤️</h1>
+<button onclick="document.getElementById('screen2').scrollIntoView({behavior:'smooth'})">Dalej 💜</button>
+<div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+<div class="heart" style="left:30%; animation-delay:2s;">💖</div>
+<div class="heart" style="left:50%; animation-delay:4s;">💕</div>
+<div class="heart" style="left:70%; animation-delay:6s;">💞</div>
+<div class="heart" style="left:90%; animation-delay:8s;">❤️</div>
+<img src="serceona.jpg" class="photo" style="left:20%; animation-delay:3s;">
+<img src="serceja.jpg" class="photo" style="left:60%; animation-delay:7s;">
+<img src="us.jpg" class="photo" style="left:80%; animation-delay:10s;">
+</section>
+
+<!-- Ekran 2 -->
+<section id="screen2" class="screen2">
+<div class="content">
+<p>
+Heejj. Wiesz, że Cię kocham, prawda? Faakt, bywa między nami różnie, zmienia się, zachowujemy się różnie, robimy różne rzeczy, ale najważniejsze jest to, abyśmy cały czas trzymali się razem, wyjaśniali razem wszystko, starali się, ufali, szanowali, kochali. <br><br>
+<span class="highlight">NIE WAŻNE CO, ZAWSZE RAZEM, ZAWSZE BĘDZIE LEPIEJ</span>
+</p>
+<button onclick="document.getElementById('screen3').scrollIntoView({behavior:'smooth'})">Dalej 💜</button>
+</div>
+</section>
+
+<!-- Ekran 3 -->
+<section id="screen3" class="screen3">
+<div class="container">
+<img src="usy1.jpg" class="photoFloat photo1">
+<img src="usy2.jpg" class="photoFloat photo2">
+<img src="usy3.jpg" class="photoFloat photo3">
+<p>
+Kuuuurwa ciezko jest cn? W sensie, wiadomo, zawsze bylo, ale roooznie bywa, roznie sie dzieje, no generalnie rozpierdol, i wiadomo ze roznie to przezywamy, roznie odbieramy, oddzialowujemy na siebie itd itp. I tutaj nie beeede teraz pierdolil bo wiesz jakie ja mam podejscie. I co by sie nie dzialo miedzy nami, kurwa juz mi leb paruje od pisania tego 😭😭😭😭.<br><br>
+W KAZDYM RAZIE, KOCHAAANIE PROSZE NIE PODDAWAJMY SIEEEEEE, WALCZMY O TO RAZEM, NAWET JAK CZASEM NIE JEST DOBRZE TO DLA TYCH MOMENTOW KTORE MOGA BYC DOBRE WARTOOO, NA PRAWDE WARTO. <br><br>
+Wierzysz jeszcze, ze jestesmy sobie przeznaczeni? Ze za te 2 lata wyjebiemy razem i bedziemy sobie zyli szczesliwie? We wszystko co sobie obiecalismy daawno temu? Bo ja wierze w chuuj, i do tego chce dążyć. <br><br>
+NIE bede wskazywal winowajcow aaaale... no odleglosc na pewno nie pomaga, bo gdybysmy mogli sie widziec na codzien to wydaje mi sie ze nie byłoby 90% problemów XDDDDD, i to tak w chuj pewien tego jestem. <br><br>
+Nie wiem co aktualnie czujesz i co o mnie myslisz, nie wiem na prawde co sie dzieje czasami, ale <span class="highlight">kocham cię ponad wszystko, KOCHAM.</span>
+</p>
+<button onclick="document.getElementById('screen4').scrollIntoView({behavior:'smooth'})">Dalej 💜</button>
+</div>
+</section>
+
+<!-- Ekran 4 - ostatni Twój tekst w scrollowalnej kartce z 5 zdjęciami wokół -->
+<section id="screen4" class="screen4">
+<img src="cwel1.jpg" class="lastPhoto last1">
+<img src="cwel2.jpg" class="lastPhoto last2">
+<img src="cwel3.jpg" class="lastPhoto last3">
+<img src="cwel4.jpg" class="lastPhoto last4">
+<img src="cwel5.jpg" class="lastPhoto last5">
+
+<div class="scrollCard">
+<p>
+Dobra, koncze bo to ile ja to w planach mialem (i ile robilem hehe) to jest nooo DUZO CZASU. Ekspertem od htmla nie jestem a od cssow to juz w ogole wiec wspieralem sie dzepettem ALE tylko do tlumaczenia co mam robic!! Te glowne rzeczy sam robilem bo hehe podstawy znam (ale bez dzipitiego to by wygladalo brzydko ze ojapierdole i by wygladalo jakbym 5 minut robil XDDDDDD) KONKLUZJA: kocham cie i wgl i wiadomo ze bedzie roznie ale mimo wszystko NO KUUUUUUUUURWA KOCHAM CIE DZIEWCZYNO I POTRZEBUJE CIE W CHUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUJ I NIE WYOBRAZAM SOBIE ZYC BEZ CIEBIEEEEEEE, ZYJE DLA CIEBIEEE. TYM samym chcialbym ci podziekowac za to ze jestes, za to ze jestes pierwsza (no jak na moje pierwsza ty se tam interpretuj jak chcesz :/) z ktora moge FAKTYCZNIE BYC, pierwsza ktora mnie kocha, ze mnie nie oceniasz, ze spedzamy razem tyle fajnego czasu, ze jestes pierwsza ktora pocalowalem, przytulilem ALE FR PRZYTULILEM, no i o reszcie moglbym pierdolic i pierdolic ale deadline sie zbliza a chce to juz konczyc nooo. Wiec sluchaj mniee, KOOCHAM CIE i zrobie wszystko zeby tobie bylo dobrze, zebysmy byli razem szczesliwi NO I ZNAASZ MNIE MIMO WSZYSTKO LOVERBOYEM JESTEMMMM.
+</p>
+<button onclick="document.getElementById('screen5').scrollIntoView({behavior:'smooth'})">Zakończenie 💜</button>
+</div>
+</section>
+
+<!-- Ekran 5 - zakończenie -->
+<section id="screen5" class="screen5">
+<h1 class="bigLove">KOCHAM CIĘ 💜💜💜</h1>
+<div class="mwah">MWAH 💋💋💋</div>
+
+<div class="kiss" style="left:10%; animation-delay:0s;">💋</div>
+<div class="kiss" style="left:30%; animation-delay:2s;">😘</div>
+<div class="kiss" style="left:50%; animation-delay:4s;">💋</div>
+<div class="kiss" style="left:70%; animation-delay:6s;">😘</div>
+<div class="kiss" style="left:90%; animation-delay:8s;">💋</div>
+
+<div class="loveHeart" style="left:15%; animation-delay:1s;">❤️</div>
+<div class="loveHeart" style="left:40%; animation-delay:3s;">💖</div>
+<div class="loveHeart" style="left:60%; animation-delay:5s;">💕</div>
+<div class="loveHeart" style="left:80%; animation-delay:7s;">💞</div>
+
+</section>
+</body>
+</html>
